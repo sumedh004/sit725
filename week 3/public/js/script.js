@@ -8,7 +8,7 @@ $(document).ready(function () {
             console.log(result);
             console.log(result?.data);
             console.log(result?.statuscocde);
-            alert("Result is " + result.data);
+            //alert("Result is " + result.data);
           }});
         //clickMe();
     })
@@ -19,7 +19,7 @@ $(document).ready(function () {
         var number2 = $('#number2').val();
         var numbers = {n1: number1, n2: number2};
         $.get("/multiplyTwoNumber", numbers, function (data) {
-          console.log('Data has returned' + data);
+          console.log( data);
           $('#result').val(data);
         });
     });
