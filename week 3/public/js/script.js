@@ -13,4 +13,17 @@ $(document).ready(function () {
         //clickMe();
     })
     $(".modal").modal();
+
+    $('#calculatebtn').click(function () {
+        var number1 = $('#number1').val();
+        var number2 = $('#number2').val();
+        var numbers = {n1: number1, n2: number2};
+        $.get("/multiplyTwoNumber", numbers, function (data) {
+          console.log('Data has returned' + data);
+          $('#result').val(data);
+        });
+    });
 });
+
+
+    

@@ -2,15 +2,21 @@
     const app= express();
     app.use(express.static('public'))
 
-    const multiplyTwoNumber= (n1,n2) => {
-        return n1*n2;
-    }
+    // const multiplyTwoNumber= (n1,n2) => {
+    //     return n1*n2;
+    // }
+
+    var multiplyTwoNumber = function (num1, num2) {
+        var result = num1 + num2;
+        return result;
+      };
 
     app.get("/multiplyTwoNumber", (req,res)=>{
         const n1= parseInt(req.query.n1);
         const n2=parseInt(req.query.n2);
         const result = multiplyTwoNumber(n1,n2);
-        res.json({statuscocde:200, data: result }); 
+        // res.json({statuscocde:200, data: result }); 
+        res.send('' + result + ''); 
     });
 
     app.get("/Display", (req, res) => {
