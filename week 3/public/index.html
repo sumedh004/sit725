@@ -18,7 +18,7 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
-    <nav>
+    <nav class="indigo">
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">My demo website for SIT725 using materialize</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -31,6 +31,75 @@
 
       <a class="waves-effect waves-light btn">button</a>
 <a class="waves-effect waves-light btn" id="clickMeButton"><i class="material-icons left">cloud</i>button</a>
+
+
+
+      
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <a class="waves-effect waves-light btn click-me-button modal-trigger" id="clickMeButton"
+        data-target="modal1"><i class="material-icons left">auto_fix_high</i>Contact us</a>
+        <!-- <h5 class="white-text">Contact us</h5> -->
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
+
+
+<div id="modal1" class="modal modal-fixed-footer">
+  <div class="row modal-content">
+      <form class="col s12">
+          <div class="row">
+              <div class="input-field col s6">
+                  <input placeholder="Enter your First Name" id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                  <input placeholder="Enter your Last Name" id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+              </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                  <input placeholder="Enter your Email" id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+              </div>
+              
+          <div class="row">
+              <div class="input-field col s12">
+                  <input placeholder="Enter your Password" id="password" type="password" class="validate">
+                  <label for="password">Password</label>
+              </div>
+          </div>
+      
+          </div>
+          <div class="row">
+              <div class="input-field col s12 center-align">
+                  <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>
 
   </body>
 </html>
