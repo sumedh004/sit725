@@ -29,38 +29,44 @@ $(document).ready(function () {
     e.preventDefault(); // Prevent the default form submission
 
     const formData = {
-      name: $('#name').val(),
-      email: $('#email').val(),
-      message: $('#message').val()
+      name: $("#name").val(),
+      email: $("#email").val(),
+      message: $("#message").val(),
     };
 
     $.ajax({
-      url: '/api/contact',
-      type: 'POST',
+      url: "/api/contact",
+      type: "POST",
       data: formData,
       success: function (response) {
         if (response.statusCode === 201) {
-          $('#formResponse').text(`Hi ${formData.name}, your details are submitted.`).css("color","green");
+          $("#formResponse")
+            .text(`Hi ${formData.name}, your details are submitted.`)
+            .css("color", "green");
         } else {
-          $('#formResponse').text('There was an issue submitting your details.').css("color", "red");
+          $("#formResponse")
+            .text("There was an issue submitting your details.")
+            .css("color", "red");
         }
-        $('#contactForm')[0].reset(); // Reset the form
+        $("#contactForm")[0].reset(); // Reset the form
       },
       error: function () {
-        $('#responseMessage').text('There was an error processing your request.').css("color", "red");
-      }
+        $("#responseMessage")
+          .text("There was an error processing your request.")
+          .css("color", "red");
+      },
     });
   });
 
   // Fetch and display schedule
   function fetchSchedule() {
     $.ajax({
-      url: '/api/schedule',
-      type: 'GET',
+      url: "/api/schedule",
+      type: "GET",
       success: function (response) {
         if (response.statusCode === 200) {
-          const scheduleTableBody = $('#scheduleTableBody');
-          response.data.forEach(event => {
+          const scheduleTableBody = $("#scheduleTableBody");
+          response.data.forEach((event) => {
             const row = `
               <tr>
                 <td>${event.time}</td>
@@ -71,12 +77,12 @@ $(document).ready(function () {
             scheduleTableBody.append(row);
           });
         } else {
-          console.error('Failed to fetch schedule.');
+          console.error("Failed to fetch schedule.");
         }
       },
       error: function () {
-        console.error('Error fetching schedule.');
-      }
+        console.error("Error fetching schedule.");
+      },
     });
   }
 });
