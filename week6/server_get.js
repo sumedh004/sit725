@@ -5,7 +5,7 @@ const scheduleRoutes = require("./routes/scheduleRoutes");
 
 const app = express();
 const uri =
-  "mongodb+srv://s223654321:H7uDcmOy0UTjPVAl@cluster0.opevcdh.mongodb.net/";
+  "mongodb+srv://s223654321:H7uDcmOy0UTjPVAl@cluster0.opevcdh.mongodb.net/test";
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));

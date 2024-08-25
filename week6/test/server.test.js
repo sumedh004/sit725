@@ -1,7 +1,7 @@
 const request = require('supertest');
 const chai = require('chai');
 const expect = chai.expect;
-const app = require('../server_get'); // Ensure this points to your Express app
+const app = require('../server_get');
 const mongoose = require('mongoose');
 const Schedule = require('../models/scheduleModel');
 const Contact = require('../models/contactModel');
@@ -9,10 +9,10 @@ const { connectDB, closeDB } = require('../test/db');
 
 describe('Server Tests', function() {
   before(async function() {
-    // Connect to the test database
+    
     await connectDB();
 
-    // Insert test data for /api/schedule endpoint
+   
     await Schedule.insertMany([
       { time: '10:00 AM', event: 'Opening Ceremony', speaker: 'Alice' },
       { time: '11:00 AM', event: 'Keynote Speech', speaker: 'Bob' },
@@ -20,7 +20,7 @@ describe('Server Tests', function() {
   });
 
   after(async function() {
-    // Clean up the test database
+ 
     
     await closeDB();
   });
@@ -57,7 +57,7 @@ describe('Server Tests', function() {
           expect(res.body).to.have.property('statusCode', 201);
           expect(res.body).to.have.property('message', 'Contact form submitted successfully.');
 
-          // Optionally, check that the contact was saved in the database
+          
           Contact.findOne({ email: 'john.doe@example.com' })
             .then(contact => {
               expect(contact).to.exist;

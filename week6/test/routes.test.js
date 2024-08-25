@@ -1,7 +1,7 @@
 const request = require('supertest');
 const chai = require('chai');
 const expect = chai.expect;
-const app = require('../server_get') // Import your Express app
+const app = require('../server_get') 
 
 describe('API Routes', function() {
   it('should get schedule endpoint', function(done) {

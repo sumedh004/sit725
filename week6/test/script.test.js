@@ -19,18 +19,18 @@ describe('JavaScript Functions', function() {
     global.window = window;
     global.$ = jquery(window);
 
-    // Simulate the fetchSchedule function
+   
     const script = `
       function fetchSchedule() {
         $('#scheduleTableBody').append('<tr><td>10:00</td><td>Opening Ceremony</td><td>Alice</td></tr>');
       }
       fetchSchedule();
     `;
-    
-    // Use eval in a safe environment
+   
+   
     eval(script);
 
-    // Verify that the row was added
+    
     const row = $('#scheduleTableBody').find('tr').first();
     expect(row).to.exist;
     expect(row.find('td').first().text()).to.equal('10:00');

@@ -2,7 +2,7 @@ const request = require('supertest');
 const chai = require('chai');
 const expect = chai.expect;
 const mongoose = require('mongoose');
-const app = require('../server_get') // Import your Express app
+const app = require('../server_get') 
 const Schedule = require('../models/scheduleModel');
 const { connectDB, closeDB } = require('../test/db');
 
